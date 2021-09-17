@@ -1,0 +1,2 @@
+render TachyonInternal test.tga ; #Does the actual rendering 
+

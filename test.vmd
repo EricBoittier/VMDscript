@@ -207,4 +207,4 @@ render aasamples TachyonLOptiXInternal 128 ;
 render TachyonLOptiXInternal test.png ; #Does the actual rendering 
 
   
-exit; 
+#exit; 
