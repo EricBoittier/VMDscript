@@ -1,15 +1,3 @@
-mol new ../FDCM/test_1_12.mdcm.xyz psf first 0 last -1 step 1 filebonds 1 autobonds 1 wait for all 
-mol delrep 0 top
-mol representation CPK 0.300000 0.300000 0.000000 0.000000
-mol material AOChalky
-mol addrep top
-
-mol new ../FDCM/cubes/12_SCAN_1_2_3_4_F/B.p.cube psf first 0 last -1 step 1 filebonds 1 autobonds 1 wait for all 
-mol delrep 0 top
-mol representation CPK 0.500000 0.2000000 10.000000 10.000000
-#mol representation Licorice
-mol material AOChalky
-mol addrep top
 
 color Display Background white
 axes location off; 
@@ -204,5 +192,7 @@ label textsize 1.0
 
 display projection orthographic
 #render aasamples TachyonLOptiXInternal 128 ;
-#render TachyonLOptiXInternal test.png ; #Does the actual rendering
+#render TachyonLOptiXInternal test.png ; #Does the actual rendering 
+
+  
 #exit; 
