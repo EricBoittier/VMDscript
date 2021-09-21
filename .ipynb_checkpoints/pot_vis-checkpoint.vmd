@@ -1,5 +1,5 @@
 mol new ../pydcm/acrolein-min/ref/L.p.cube type cube first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
-mol addfile ../pydcm/acrolein-min/6-analysis/23-charges/error.cube type cube first 0 last -1 step 1
+mol addfile ../pydcm/acrolein-min/ref/L.d.cube type cube first 0 last -1 step 1
 filebonds 1 autobonds 1 waitfor all
 mol delrep 0 top
 mol representation CPK 0.500000 0.2000000 10.000000 10.000000
@@ -16,7 +16,7 @@ mol material AOChalky
 mol addrep top
 mol selupdate 1 top 0
 mol colupdate 1 top 0
-mol scaleminmax top 1 -0.1 0.1
+mol scaleminmax top 1 -0.04 0.04
 mol smoothrep top 1 0
 
 color Display Background white
