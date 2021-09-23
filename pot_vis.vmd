@@ -16,8 +16,9 @@ mol material AOChalky
 mol addrep top
 mol selupdate 1 top 0
 mol colupdate 1 top 0
-mol scaleminmax top 1 -0.1 0.1
+mol scaleminmax top 1 -5 5
 mol smoothrep top 1 0
+mol drawframes top 1 {now}
 
 color Display Background white
 axes location off; 
@@ -211,8 +212,10 @@ label textsize 1.0
 
 
 display projection orthographic
-#render aasamples TachyonLOptiXInternal 128 ;
-#render TachyonLOptiXInternal test.png ; #Does the actual rendering 
-
-  
-#exit; 
+render aasamples TachyonLOptiXInternal 128 ;
+render TachyonLOptiXInternal test.png ; #Does the actual rendering 
+exit; 
+display projection orthographic
+render aasamples TachyonInternal 64 ;
+render TachyonInternal pot_vis.vmd.tga
+exit;

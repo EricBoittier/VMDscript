@@ -266,6 +266,13 @@ atomselect macro conformationD {altloc "" or altloc "D"}
 atomselect macro conformationE {altloc "" or altloc "E"}
 atomselect macro conformationF {altloc "" or altloc "F"}
 atomselect macro drude {type DRUD or type LP}
+atomselect macro unparametrized beta<1
+atomselect macro addedmolefacture {occupancy 0.8}
+atomselect macro qwikmd_protein {(not name QWIKMDDELETE and protein)}
+atomselect macro qwikmd_nucleic {(not name QWIKMDDELETE and nucleic)}
+atomselect macro qwikmd_glycan {(not name QWIKMDDELETE and glycan)}
+atomselect macro qwikmd_lipid {(not name QWIKMDDELETE and lipid)}
+atomselect macro qwikmd_hetero {(not name QWIKMDDELETE and hetero and not qwikmd_protein and not qwikmd_lipid and not qwikmd_nucleic and not qwikmd_glycan and not water)}
 # Display settings
 display eyesep       0.065000
 display focallength  2.000000
@@ -274,7 +281,7 @@ display distance     -2.000000
 display projection   Perspective
 display nearclip set 0.500000
 display farclip  set 10.000000
-display depthcue   off
+display depthcue   on
 display cuestart   0.500000
 display cueend     10.000000
 display cuestart   0.500000
@@ -288,9 +295,9 @@ display aodirect 0.300000
 display dof off
 display dof_fnumber 64.000000
 display dof_focaldist 0.700000
-mol new ../FDCM/test_1_12.mdcm.xyz type xyz first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol new /home/eric/Documents/PhD/FDCM/cube_files/acrolein/1_SCAN_1_2_3_4_F/L.p.cube type cube first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
 mol delrep 0 top
-mol representation CPK 0.800000 0.300000 0.000000 0.000000
+mol representation CPK 0.500000 0.2000000 10.000000 10.000000
 mol color Name
 mol selection {all}
 mol material AOChalky
@@ -324,85 +331,11 @@ mol clipplane center 5 0 top {0.0 0.0 0.0}
 mol clipplane color  5 0 top {0.5 0.5 0.5 }
 mol clipplane normal 5 0 top {0.0 0.0 1.0}
 mol clipplane status 5 0 top {0}
-mol rename top test_1_12.mdcm.xyz
-set viewpoints([molinfo top]) {{{1 0 0 0.342596} {0 1 0 -0.307972} {0 0 1 -0.0332162} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}} {{0.296104 0 0 0} {0 0.296104 0 0} {0 0 0.296104 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
-lappend viewplist [molinfo top]
-# done with molecule 0
-mol new ../FDCM/cubes/12_SCAN_1_2_3_4_F/B.p.cube type cube first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
-mol delrep 0 top
-mol representation Lines
-mol color Name
-mol selection {all}
-mol material Opaque
-mol addrep top
-mol selupdate 0 top 0
-mol colupdate 0 top 0
-mol scaleminmax top 0 0.000000 0.000000
-mol smoothrep top 0 0
-mol drawframes top 0 {now}
-mol clipplane center 0 0 top {0.0 0.0 0.0}
-mol clipplane color  0 0 top {0.5 0.5 0.5 }
-mol clipplane normal 0 0 top {0.0 0.0 1.0}
-mol clipplane status 0 0 top {0}
-mol clipplane center 1 0 top {0.0 0.0 0.0}
-mol clipplane color  1 0 top {0.5 0.5 0.5 }
-mol clipplane normal 1 0 top {0.0 0.0 1.0}
-mol clipplane status 1 0 top {0}
-mol clipplane center 2 0 top {0.0 0.0 0.0}
-mol clipplane color  2 0 top {0.5 0.5 0.5 }
-mol clipplane normal 2 0 top {0.0 0.0 1.0}
-mol clipplane status 2 0 top {0}
-mol clipplane center 3 0 top {0.0 0.0 0.0}
-mol clipplane color  3 0 top {0.5 0.5 0.5 }
-mol clipplane normal 3 0 top {0.0 0.0 1.0}
-mol clipplane status 3 0 top {0}
-mol clipplane center 4 0 top {0.0 0.0 0.0}
-mol clipplane color  4 0 top {0.5 0.5 0.5 }
-mol clipplane normal 4 0 top {0.0 0.0 1.0}
-mol clipplane status 4 0 top {0}
-mol clipplane center 5 0 top {0.0 0.0 0.0}
-mol clipplane color  5 0 top {0.5 0.5 0.5 }
-mol clipplane normal 5 0 top {0.0 0.0 1.0}
-mol clipplane status 5 0 top {0}
-mol representation CPK 0.0500000 0.010000 0.100000 0.100000
-mol color Name
-mol selection {all}
-mol material Transparent
-mol addrep top
-mol selupdate 1 top 0
-mol colupdate 1 top 0
-mol scaleminmax top 1 0.000000 0.000000
-mol smoothrep top 1 0
-mol drawframes top 1 {now}
-mol clipplane center 0 1 top {0.0 0.0 0.0}
-mol clipplane color  0 1 top {0.5 0.5 0.5 }
-mol clipplane normal 0 1 top {0.0 0.0 1.0}
-mol clipplane status 0 1 top {0}
-mol clipplane center 1 1 top {0.0 0.0 0.0}
-mol clipplane color  1 1 top {0.5 0.5 0.5 }
-mol clipplane normal 1 1 top {0.0 0.0 1.0}
-mol clipplane status 1 1 top {0}
-mol clipplane center 2 1 top {0.0 0.0 0.0}
-mol clipplane color  2 1 top {0.5 0.5 0.5 }
-mol clipplane normal 2 1 top {0.0 0.0 1.0}
-mol clipplane status 2 1 top {0}
-mol clipplane center 3 1 top {0.0 0.0 0.0}
-mol clipplane color  3 1 top {0.5 0.5 0.5 }
-mol clipplane normal 3 1 top {0.0 0.0 1.0}
-mol clipplane status 3 1 top {0}
-mol clipplane center 4 1 top {0.0 0.0 0.0}
-mol clipplane color  4 1 top {0.5 0.5 0.5 }
-mol clipplane normal 4 1 top {0.0 0.0 1.0}
-mol clipplane status 4 1 top {0}
-mol clipplane center 5 1 top {0.0 0.0 0.0}
-mol clipplane color  5 1 top {0.5 0.5 0.5 }
-mol clipplane normal 5 1 top {0.0 0.0 1.0}
-mol clipplane status 5 1 top {0}
-mol rename top B.p.cube
-set viewpoints([molinfo top]) {{{1 0 0 0.342596} {0 1 0 -0.307972} {0 0 1 -0.0332162} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}} {{0.296104 0 0 0} {0 0.296104 0 0} {0 0 0.296104 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
+mol rename top L.p.cube
+set viewpoints([molinfo top]) {{{1 0 0 0.536487} {0 1 0 -0.0787357} {0 0 1 -0.0156805} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}} {{0.3356 0 0 0} {0 0.3356 0 0} {0 0 0.3356 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
 lappend viewplist [molinfo top]
 set topmol [molinfo top]
-# done with molecule 1
+# done with molecule 0
 foreach v $viewplist {
   molinfo $v set {center_matrix rotate_matrix scale_matrix global_matrix} $viewpoints($v)
 }
@@ -457,10 +390,8 @@ color scale colors CET_R2 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
     {color Display {FPS} white}
     {color Name {LPA} green}
     {color Name {LPB} green}
-    {color Name {F} pink}
     {color Type {LP} green}
     {color Type {DRUD} pink}
-    {color Type {F} pink}
     {color Element {X} cyan}
     {color Element {Ac} ochre}
     {color Element {Ag} ochre}
@@ -571,7 +502,6 @@ color scale colors CET_R2 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
     {color Segname {} blue}
     {color Conformation {all} blue}
     {color Molecule {0} blue}
-    {color Molecule {1} red}
     {color Structure {3_10_Helix} blue}
     {color Surface {Grasp} gray}
     {color Labels {Springs} orange}

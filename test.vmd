@@ -17,7 +17,7 @@ axes location off;
 #save_state scene.dat ;
 
 display ambientocclusion on
-display aoambient 0.75
+display aoambient 0.5
 display aodirect 0.5
 
 set env(VMDOPTIXWRITEALPHA) 1
@@ -203,6 +203,11 @@ label textsize 1.0
 
 
 display projection orthographic
+render aasamples TachyonInternal 64 ;
+render TachyonInternal test.tga
+exit; 
+
+#display projection orthographic
 #render aasamples TachyonLOptiXInternal 128 ;
-#render TachyonLOptiXInternal test.png ; #Does the actual rendering
+#render TachyonLOptiXInternal test.png ; #Does the actual rendering 
 #exit; 

@@ -203,8 +203,10 @@ label textsize 1.0
 
 
 display projection orthographic
-#render aasamples TachyonLOptiXInternal 128 ;
-#render TachyonLOptiXInternal test.png ; #Does the actual rendering 
-
-  
-#exit; 
+render aasamples TachyonLOptiXInternal 128 ;
+render TachyonLOptiXInternal test.png ; #Does the actual rendering 
+exit; 
+display projection orthographic
+render aasamples TachyonInternal 64 ;
+render TachyonInternal fit_fbuta_2_final.vmd.tga
+exit;
