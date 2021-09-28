@@ -200,12 +200,6 @@ color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
 vmdrestoremycolors
 label textsize 1.0
 
-
-
-display projection orthographic
-render aasamples TachyonLOptiXInternal 128 ;
-render TachyonLOptiXInternal test.png ; #Does the actual rendering 
-exit; 
 display projection orthographic
 render aasamples TachyonInternal 64 ;
 render TachyonInternal fit_fbuta_2_final.vmd.tga
